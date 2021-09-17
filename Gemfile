@@ -7,6 +7,7 @@ gem 'sinatra'
 gem 'webrick'
 gem 'sinatra-contrib'
 gem 'rack-test'
+gem 'timecop'
 
 group :test do
   gem 'capybara'

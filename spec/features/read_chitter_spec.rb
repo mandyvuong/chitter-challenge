@@ -2,8 +2,8 @@ require 'pg'
 
 feature 'chitter homepage' do
   scenario 'user can see peeps' do
-    Peeps.create(peep: 'boredom kills')
-    Peeps.create(peep: 'hello')
+    Peeps.create(message: 'boredom kills')
+    Peeps.create(message: 'hello')
     visit '/chitter'
     expect(page).to have_content 'hello'
     expect(page).to have_content 'boredom kills'
