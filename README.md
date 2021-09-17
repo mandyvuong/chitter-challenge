@@ -18,36 +18,19 @@ STRAIGHT UP
 
 As a Maker
 So that I can let people know what I am doing
-I want to **post** a message **(peep)** to chitter
+I want to post a message (peep) to chitter
 
 As a maker
 So that I can see what others are saying
-I want to **see all peeps** in reverse chronological order
+I want to see all peeps in reverse chronological order
 
 As a Maker
 So that I can better appreciate the context of a peep
-I want to see the **time** at which it was made
+I want to see the time at which it was made
 
 As a Maker
 So that I can post messages on Chitter as me
-I want to **sign up** for Chitter
-
-Chitter app
-peep.create /chitter/new Peeps (posts to chitter) have the name of the maker and their user handle.
-peep.read /chitter
-peep.time /chitter
-user.signup sign up chitter/sign-up
-user.login login chitter/log-in
-user.logout logout chitter/log-out
-database chitter
-- peep: id, message, time (user story 3) i.e. CREATE TABLE peeps(id SERIAL PRIMARY KEY, message VARCHAR(120));
-- user: id, email, password, name and a username
-
-
-HTTP Verb	Route	Action	Used For
-GET	'/chitter'	index action	index page to display all peeps (peeps.read, user.signup, user.login, user.logout)
-GET	'/chitter/new'	new action	displays create peep form (peeps.create)
-POST	'/chitter'	create action	creates one peep
+I want to sign up for Chitter
 
 HARDER
 
@@ -139,3 +122,21 @@ SimpleCov.start
 ```
 
 You can see your test coverage when you run your tests. If you want this in a graphical form, uncomment the `HTMLFormatter` line and see what happens!
+
+NOTES
+Chitter app - DONE
+peep.create /chitter/new Peeps (posts to chitter) have the name of the maker and their user handle.
+peep.read /chitter
+peep.time /chitter
+user.signup sign up chitter/sign-up
+user.login login chitter/log-in
+user.logout logout chitter/log-out
+database chitter
+
+- peep: id, message, time (user story 3) i.e. CREATE TABLE peeps(id SERIAL PRIMARY KEY, message VARCHAR(120));
+- user: id, email, password, name and a username
+
+HTTP Verb Route Action Used For
+GET '/chitter' index action index page to display all peeps (peeps.read, user.signup, user.login, user.logout)
+GET '/chitter/new' new action displays create peep form (peeps.create)
+POST '/chitter' create action creates one peep
