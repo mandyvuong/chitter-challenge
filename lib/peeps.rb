@@ -2,7 +2,7 @@ require 'pg'
 
 class Peeps
   def self.create(peep:)
-    if ENV['RACK_ENV'] == 'test'
+    if ENV['ENVIRONMENT'] == 'test'
       connection = PG.connect :dbname => 'chitter_test'
     else
       connection = PG.connect :dbname => 'chitter'
@@ -11,7 +11,7 @@ class Peeps
   end
 
   def self.read
-    if ENV['RACK_ENV'] == 'test'
+    if ENV['ENVIRONMENT'] == 'test'
       connection = PG.connect :dbname => 'chitter_test'
     else
       connection = PG.connect :dbname => 'chitter'
