@@ -16,7 +16,7 @@ class Peeps
     else
       connection = PG.connect :dbname => 'chitter'
     end
-    peeps = connection.exec "SELECT * FROM peeps"
+    peeps = connection.exec "SELECT * FROM peeps ORDER BY id DESC"
     peeps.map { |peep| peep['message'] }
   end
 end
