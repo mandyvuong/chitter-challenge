@@ -15,7 +15,7 @@ class Peeps
     else
       connection = PG.connect :dbname => 'chitter'
     end
-    result = connection.exec("INSERT INTO peeps (message, time_stamp) VALUES('#{message}', NOW()) RETURNING id, message, time_stamp ;")
+    result = connection.exec_params("INSERT INTO peeps (message, time_stamp) VALUES($1, NOW()) RETURNING id, message, time_stamp ;", [message])
     Peeps.new(id: result[0]['id'], message: result[0]['message'], time_stamp: result[0]['time_stamp'])
   end
 
